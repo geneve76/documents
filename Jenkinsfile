@@ -21,7 +21,7 @@ pipeline {
             steps {
                 script {
                     withCredentials([string(credentialsId: 'geneve76', variable: 'Abdul@123')]) {
-                        gin -u geneve76 -p ${env.'Abdul@123'}
+                        sh "docker login -u geneve76 -p ${env.DOCKERHUB_PASSWORD}"
                         sh 'docker push geneve76/hello:latest'
                     }
                 }
