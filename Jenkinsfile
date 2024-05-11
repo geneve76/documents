@@ -20,8 +20,8 @@ pipeline {
         stage('Push image to Hub') {
             steps {
                 script {
-                    withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'DOCKERHUB_PASSWORD')]) {
-                        sh "docker login -u geneve76 -p ${env.DOCKERHUB_PASSWORD}"
+                    withCredentials([string(credentialsId: 'geneve76', variable: 'Abdul@123')]) {
+                        sh "docker login -u geneve76 -p ${env.Abdul@123}"
                         sh 'docker push geneve76/hello:latest'
                     }
                 }
